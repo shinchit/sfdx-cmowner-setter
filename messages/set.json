@@ -1,0 +1,7 @@
+{
+  "commandDescription": "SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.",
+  "targetcampaignFlagDescription": "Salesforce ID of the campaign you want to process",
+  "useridtosetFlagDescription": "Salesforce ID of the user you want to specify as the owner",
+  "errorNoOrgResults": "No results found for the org '%s'."
+}
+
