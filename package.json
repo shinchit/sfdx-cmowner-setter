@@ -24,6 +24,7 @@
     "chai": "^4",
     "globby": "^8",
     "mocha": "^5",
+    "npm-force-resolutions": "^0.0.10",
     "nyc": "^14",
     "ts-node": "^8",
     "tslint": "^5"
@@ -55,10 +56,16 @@
     ]
   },
   "repository": "shinchit/sfdx-cmowner-setter",
+  "resolutions": {
+    "fast-glob": "3.2.7",
+    "glob-parent": "6.0.1",
+    "minimist": "1.2.5"
+  },
   "scripts": {
     "lint": "tslint --project . --config tslint.json --format stylish",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p test -t stylish",
+    "preinstall": "npx npm-force-resolutions",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
