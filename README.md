@@ -16,8 +16,11 @@ SFDX plugin that changes the owner of a campaign member for a specified campaign
 <!-- tocstop -->
 # Install
 <!-- install -->
+```sh-session
 $ sfdx plugins:install sfdx-cmowner-setter
+```
 <!-- usagestop -->
+# Commands
 <!-- commands -->
 * [`sfdx cmowner:set -c <id> -s <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-cmownerset--c-id--s-id--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
