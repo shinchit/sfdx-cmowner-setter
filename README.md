@@ -1,4 +1,5 @@
-# sfdx-cmowner-setter
+sfdx-cmowner-setter
+===========
 
 SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.
 
@@ -14,8 +15,8 @@ SFDX plugin that changes the owner of a campaign member for a specified campaign
 * [sfdx-cmowner-setter](#sfdx-cmowner-setter)
 * [Install](#install)
 <!-- tocstop -->
-<!-- install -->
 # Install
+<!-- install -->
 $ sfdx plugins:install sfdx-cmowner-setter
 <!-- usagestop -->
 <!-- commands -->
