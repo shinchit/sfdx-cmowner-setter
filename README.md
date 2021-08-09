@@ -20,9 +20,9 @@ $ sfdx plugins:install sfdx-cmowner-setter
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`sfdx cmowner:set -c <id> -s <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-cmownerset--c-id--s-id--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx cmowner:set -c <id> -s <id> [-e <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-cmownerset--c-id--s-id--e-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx cmowner:set -c <id> -s <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx cmowner:set -c <id> -s <id> [-e <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.
 
@@ -30,12 +30,17 @@ SFDX plugin that changes the owner of a campaign member for a specified campaign
 SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.
 
 USAGE
-  $ sfdx cmowner:set -c <id> -s <id> [-u <string>] [--apiversion <string>] [--json] [--loglevel 
+  $ sfdx cmowner:set -c <id> -s <id> [-e <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
   -c, --targetcampaign=targetcampaign                                               (required) Salesforce ID of the
                                                                                     campaign you want to process
+
+  -e, --excludeuserids=excludeuserids                                               Salesforce IDs of the user you don't
+                                                                                    want to change as the campaing
+                                                                                    member's owner. Each Salesforce ID
+                                                                                    have to be joined by comma.
 
   -s, --useridtoset=useridtoset                                                     (required) Salesforce ID of the user
                                                                                     you want to specify as the owner
@@ -53,7 +58,7 @@ OPTIONS
 
 EXAMPLE
   $ sfdx cmowner:set --targetusername username@example.com --targetcampaign <salesforceCampaignId> --useridtoset 
-  <salesforceUserId>
+  <salesforceUserId> --excludeuserids <salesforceUserIds joined by comma>
 ```
 
 _See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.2.0/lib/commands/cmowner/set.js)_

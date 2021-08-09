@@ -12,12 +12,13 @@ export default class Set extends SfdxCommand {
   public static description = messages.getMessage('commandDescription');
 
   public static examples = [
-    '$ sfdx cmowner:set --targetusername username@example.com --targetcampaign <salesforceCampaignId> --useridtoset <salesforceUserId>'
+    '$ sfdx cmowner:set --targetusername username@example.com --targetcampaign <salesforceCampaignId> --useridtoset <salesforceUserId> --excludeuserids <salesforceUserIds joined by comma>'
   ];
 
   protected static flagsConfig = {
     targetcampaign: flags.id({char: 'c', required: true, description: messages.getMessage('targetcampaignFlagDescription')}),
-    useridtoset: flags.id({char: 's', required: true, description: messages.getMessage('useridtosetFlagDescription')})
+    useridtoset: flags.id({char: 's', required: true, description: messages.getMessage('useridtosetFlagDescription')}),
+    excludeuserids: flags.string({char: 'e', description: messages.getMessage('excludeuseridsFlagDescription')})
   };
 
   // Comment this out if your command does not require an org username
@@ -32,6 +33,7 @@ export default class Set extends SfdxCommand {
   public async run(): Promise<AnyJson> {
     const targetcampaign = this.flags.targetcampaign;
     const useridtoset = this.flags.useridtoset;
+    const excludeuserids: string[] = this.flags.excludeuserids ? this.flags.excludeuserids.split(',') : [];
 
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
@@ -59,19 +61,21 @@ export default class Set extends SfdxCommand {
     const contacts: Contact[] = [];
 
     campaignMembers.records.forEach((campaignMember: CampaignMember) => {
-      if (campaignMember.LeadOrContactId.match(/^00Q.*$/)) {
-        const lead: Lead = {
-          Id: campaignMember.LeadOrContactId,
-          OwnerId: useridtoset
-        };
-        leads.push(lead);
-      }
-      if (campaignMember.LeadOrContactId.match(/^003.*$/)) {
-        const contact: Contact = {
-          Id: campaignMember.LeadOrContactId,
-          OwnerId: useridtoset
-        };
-        contacts.push(contact);
+      if (!excludeuserids.includes(campaignMember.LeadOrContactOwnerId)) {
+        if (campaignMember.LeadOrContactId.match(/^00Q.*$/)) {
+          const lead: Lead = {
+            Id: campaignMember.LeadOrContactId,
+            OwnerId: useridtoset
+          };
+          leads.push(lead);
+        }
+        if (campaignMember.LeadOrContactId.match(/^003.*$/)) {
+          const contact: Contact = {
+            Id: campaignMember.LeadOrContactId,
+            OwnerId: useridtoset
+          };
+          contacts.push(contact);
+        }
       }
     });
 
