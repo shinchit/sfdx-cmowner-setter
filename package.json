@@ -1,7 +1,7 @@
 {
   "name": "sfdx-cmowner-setter",
   "description": "SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "shinchit @shinchit",
   "bugs": "https://github.com/shinchit/sfdx-cmowner-setter/issues",
   "dependencies": {
