@@ -12,7 +12,6 @@ SFDX plugin that changes the owner of a campaign member for a specified campaign
 [![License](https://img.shields.io/npm/l/cmowner-setter.svg)](https://github.com/shinchit/sfdx-cmowner-setter/blob/master/package.json)
 
 <!-- toc -->
-* [sfdx-cmowner-setter](#sfdx-cmowner-setter)
 * [Install](#install)
 <!-- tocstop -->
 # Install
@@ -56,5 +55,5 @@ EXAMPLE
   <salesforceUserId>
 ```
 
-_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.4/lib/commands/cmowner/set.js)_
+_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.5/lib/commands/cmowner/set.js)_
 <!-- commandsstop -->
