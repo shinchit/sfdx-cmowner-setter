@@ -3,13 +3,10 @@ sfdx-cmowner-setter
 
 SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.
 
-[![Version](https://img.shields.io/npm/v/cmowner-setter.svg)](https://npmjs.org/package/cmowner-setter)
-
-[![Codecov](https://codecov.io/gh/shinchit/sfdx-cmowner-setter/branch/master/graph/badge.svg)](https://codecov.io/gh/shinchit/sfdx-cmowner-setter)
-[![Greenkeeper](https://badges.greenkeeper.io/shinchit/sfdx-cmowner-setter.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/shinchit/sfdx-cmowner-setter/badge.svg)](https://snyk.io/test/github/shinchit/sfdx-cmowner-setter)
-[![Downloads/week](https://img.shields.io/npm/dw/cmowner-setter.svg)](https://npmjs.org/package/cmowner-setter)
-[![License](https://img.shields.io/npm/l/cmowner-setter.svg)](https://github.com/shinchit/sfdx-cmowner-setter/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/sfdx-switch.svg)](https://npmjs.org/package/sfdx-switch)
+[![Known Vulnerabilities](https://snyk.io/test/github/shinchit/sfdx-switch/badge.svg)](https://snyk.io/test/github/shinchit/sfdx-switch)
+[![Downloads/week](https://img.shields.io/npm/dw/sfdx-switch.svg)](https://npmjs.org/package/sfdx-switch)
+[![License](https://img.shields.io/npm/l/sfdx-switch.svg)](https://github.com/shinchit/sfdx-switch/blob/main/package.json)
 
 <!-- toc -->
 * [Install](#install)
