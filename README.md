@@ -56,5 +56,5 @@ EXAMPLE
   <salesforceUserId>
 ```
 
-_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.0/lib/commands/cmowner/set.js)_
+_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.1/lib/commands/cmowner/set.js)_
 <!-- commandsstop -->
