@@ -76,10 +76,10 @@ export default class Set extends SfdxCommand {
     });
 
     if (leads.length > 0) {
-      conn.sobject('Lead').update(leads);
+      conn.sobject('Lead').updateBulk(leads);
     }
     if (contacts.length > 0) {
-      conn.sobject('Contact').update(contacts);
+      conn.sobject('Contact').updateBulk(contacts);
     }
 
     return { state: 'success' };
