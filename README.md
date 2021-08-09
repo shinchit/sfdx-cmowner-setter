@@ -1,5 +1,4 @@
 # sfdx-cmowner-setter
-==============
 
 SFDX plugin that changes the owner of a campaign member for a specified campaign to a specific user.
 
@@ -56,5 +55,5 @@ EXAMPLE
   <salesforceUserId>
 ```
 
-_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.1/lib/commands/cmowner/set.js)_
+_See code: [src/commands/cmowner/set.ts](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.0.1/src/commands/cmowner/set.ts)_
 <!-- commandsstop -->
