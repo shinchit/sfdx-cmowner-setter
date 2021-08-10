@@ -18,7 +18,8 @@ export default class Set extends SfdxCommand {
   protected static flagsConfig = {
     targetcampaign: flags.id({char: 'c', required: true, description: messages.getMessage('targetcampaignFlagDescription')}),
     useridtoset: flags.id({char: 's', required: true, description: messages.getMessage('useridtosetFlagDescription')}),
-    excludeuserids: flags.string({char: 'e', description: messages.getMessage('excludeuseridsFlagDescription')})
+    excludeuserids: flags.string({char: 'e', description: messages.getMessage('excludeuseridsFlagDescription')}),
+    leadonly: flags.boolean({char: 'l', description: messages.getMessage('leadonlyFlagDescription')})
   };
 
   // Comment this out if your command does not require an org username
@@ -34,6 +35,7 @@ export default class Set extends SfdxCommand {
     const targetcampaign = this.flags.targetcampaign;
     const useridtoset = this.flags.useridtoset;
     const excludeuserids: string[] = this.flags.excludeuserids ? this.flags.excludeuserids.split(',') : [];
+    const leadonly: boolean = this.flags.leadonly;
 
     // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
     const conn = this.org.getConnection();
@@ -69,7 +71,7 @@ export default class Set extends SfdxCommand {
           };
           leads.push(lead);
         }
-        if (campaignMember.LeadOrContactId.match(/^003.*$/)) {
+        if (campaignMember.LeadOrContactId.match(/^003.*$/) && !leadonly) {
           const contact: Contact = {
             Id: campaignMember.LeadOrContactId,
             OwnerId: useridtoset
@@ -82,7 +84,7 @@ export default class Set extends SfdxCommand {
     if (leads.length > 0) {
       conn.sobject('Lead').updateBulk(leads);
     }
-    if (contacts.length > 0) {
+    if (contacts.length > 0 && !leadonly) {
       conn.sobject('Contact').updateBulk(contacts);
     }
 
