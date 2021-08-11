@@ -64,5 +64,5 @@ EXAMPLE
   <salesforceUserId> --excludeuserids <salesforceUserIds joined by comma>
 ```
 
-_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.3.0/lib/commands/cmowner/set.js)_
+_See code: [lib/commands/cmowner/set.js](https://github.com/shinchit/sfdx-cmowner-setter/blob/v0.4.0/lib/commands/cmowner/set.js)_
 <!-- commandsstop -->
