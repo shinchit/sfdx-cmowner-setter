@@ -6,7 +6,7 @@
   "bugs": "https://github.com/shinchit/sfdx-cmowner-setter/issues",
   "dependencies": {
     "@oclif/command": "^1",
-    "@oclif/config": "^1",
+    "@oclif/config": "^1.17.1",
     "@oclif/errors": "^1",
     "@salesforce/command": "^2",
     "@salesforce/core": "^2",
